@@ -17,7 +17,7 @@
 1. **Clonar el repositorio:**
 
     ```bash
-    git clone https://github.com/vfaundez-dev/sistema_reserva_restaurantes.git
+    git clone https://github.com/vfaundez-dev/prueba_tecnica_nucleo_factory
     cd prueba_tecnica_nucleo_factory
     ```
 
