@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateNoteRequest;
 use App\Models\Note;
 use Illuminate\Http\Request;
 
@@ -23,20 +24,10 @@ class NoteController extends Controller {
         }
     }
 
-    public function store(Request $request) {
+    public function store(CreateNoteRequest $request) {
         try {
 
-            $validateData = $request->validate([
-                'titulo' => 'required|string|max:255',
-                'contenido' => 'sometimes|string'
-            ], [
-                'titulo.required' => 'El campo titulo es obligatorio',
-                'titulo.string' => 'El campo titulo debe ser un texto',
-                'titulo.max' => 'El campo titulo no puede tener más de 255 caracteres',
-                'contenido.string' => 'El campo contenido debe ser un texto'
-            ]);
-
-            $newNote = Note::create($validateData);
+            $newNote = Note::create( $request->validated() );
             return response()->json([
                 'message' => 'Nota almacenada correctamente',
                 'data' => $newNote
