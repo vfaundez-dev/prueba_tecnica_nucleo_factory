@@ -1,0 +1,17 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class NoteFactory extends Factory {
+    
+    public function definition(): array {
+        return [
+            'titulo' => $this->faker->sentence,
+            'contenido' => $this->faker->paragraph,
+            'created_at' => now(),
+            'updated_at' => now()
+        ];
+    }
+}
