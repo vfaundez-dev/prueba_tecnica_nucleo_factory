@@ -81,7 +81,7 @@
 
 ## 🧪 Ejecución de tests
 
-Para ejecutar todos los tests (unitarios y de feature):
+- **Para ejecutar todos los tests (unitarios y de feature):**
 
     ```bash
     php artisan test
